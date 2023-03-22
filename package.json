@@ -1,6 +1,6 @@
 {
 	"name": "@adlad/plugin-gamemonetize",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "AdLad plugin for the GameMonetize.com sdk.",
 	"main": "mod.js",
 	"types": "dist/adlad-plugin-gamemonetize.d.ts",
