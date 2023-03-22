@@ -1,0 +1,21 @@
+{
+	"name": "@adlad/plugin-gamemonetize",
+	"version": "0.0.1",
+	"description": "AdLad plugin for the GameMonetize.com sdk.",
+	"main": "mod.js",
+	"types": "dist/adlad-plugin-gamemonetize.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pelican-Party/adlad-plugin-gamemonetize.git"
+	},
+	"keywords": [
+		"ads",
+		"gamemonetize"
+	],
+	"author": "Pelican Party Studios",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Pelican-Party/adlad-plugin-gamemonetize/issues"
+	},
+	"homepage": "https://github.com/Pelican-Party/adlad-plugin-gamemonetize#readme"
+}
