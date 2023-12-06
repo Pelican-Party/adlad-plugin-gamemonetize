@@ -9,7 +9,6 @@ export function gameMonetizePlugin({
 }) {
 	/** @type {() => void} */
 	let resolveInitialize;
-	let rewardReceived = false;
 	let didShowAd = false;
 
 	if (debug === undefined) {
@@ -90,8 +89,6 @@ export function gameMonetizePlugin({
 					} else if (event.name == "SDK_GAME_START") {
 						ctx.setNeedsMute(false);
 						ctx.setNeedsPause(false);
-					} else if (event.name == "SDK_REWARDED_WATCH_COMPLETE") {
-						rewardReceived = true;
 					} else if (event.name == "IMPRESSION") {
 						didShowAd = true;
 					}
@@ -128,15 +125,6 @@ export function gameMonetizePlugin({
 			}
 			return {
 				didShowAd,
-				errorReason: null,
-			};
-		},
-		async showRewardedAd() {
-			rewardReceived = false;
-			const result = await safeShowAd();
-			if (result) return result;
-			return {
-				didShowAd: rewardReceived,
 				errorReason: null,
 			};
 		},
