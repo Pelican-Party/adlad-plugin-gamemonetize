@@ -4,11 +4,11 @@ interface Window {
 		onEvent(event: GdEvent);
 	};
 	sdk: {
-		showBanner();
+		showBanner(): void;
 		openConsole();
 	};
 }
 
 interface GdEvent {
-	name: "SDK_READY" | "SDK_GAME_START" | "SDK_GAME_PAUSE" | "SDK_REWARDED_WATCH_COMPLETE" | "IMPRESSION";
+	name: "SDK_READY" | "SDK_GAME_START" | "SDK_GAME_PAUSE" | "COMPLETE";
 }
