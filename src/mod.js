@@ -72,8 +72,7 @@ export function gameMonetizePlugin({
 		return await Promise.race([showAdPromise, timeoutPromise]);
 	}
 
-	/** @type {import("$adlad").AdLadPlugin} */
-	const plugin = {
+	const plugin = /** @type {const} @satisfies {import("$adlad").AdLadPlugin} */ ({
 		name: "gamemonetize",
 		async initialize(ctx) {
 			if (window.SDK_OPTIONS) {
@@ -141,7 +140,7 @@ export function gameMonetizePlugin({
 				errorReason: null,
 			};
 		},
-	};
+	});
 
 	return plugin;
 }
