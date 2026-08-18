@@ -23,12 +23,10 @@
 		"proseWrap": "preserve"
 	},
 	"lint": {
-		"files": {
-			"exclude": [
-				".denoTypes",
-				"dist"
-			]
-		},
+		"exclude": [
+			".denoTypes",
+			"dist"
+		],
 		"rules": {
 			"exclude": ["require-await", "no-import-prefix", "no-window"]
 		}
