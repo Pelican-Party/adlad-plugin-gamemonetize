@@ -42,10 +42,23 @@ export function gameMonetizePlugin({
 				},
 			};
 
+			let timeoutId = -1;
+			/** @type {Promise<void>} */
+			const timeoutPromise = new Promise((resolve) => {
+				timeoutId = setTimeout(() => {
+					// When an ad blocker is in use, the sdk seems to just throw an error without ever giving us any
+					// events to hook onto. So we'll just add a timeout and resolve the initialize promise.
+					// That way at least games don't get stuck hanging on the adLad.init() call.
+					console.warn("gamemonetize plugin timed out during initialization, an ad blocker may be in use");
+					resolve();
+				}, 10_000);
+			});
+
 			const scriptEl = document.createElement("script");
 			scriptEl.src = "https://api.gamemonetize.com/sdk.js";
 			document.head.appendChild(scriptEl);
-			await initializePromise;
+			await Promise.race([initializePromise, timeoutPromise]);
+			clearTimeout(timeoutId);
 
 			if (ctx.useTestAds) {
 				// Calling openConsole multiple times makes the console unresponsive:
