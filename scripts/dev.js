@@ -1,4 +1,4 @@
-import { generateTypes } from "https://deno.land/x/deno_tsc_helper@v0.3.0/mod.js";
+import { generateTypes } from "https://deno.land/x/deno_tsc_helper@v0.7.0/mod.js";
 // This import exists just to make sure AdLad types are vendored.
 // deno-lint-ignore no-unused-vars
 import { AdLad } from "$adlad";

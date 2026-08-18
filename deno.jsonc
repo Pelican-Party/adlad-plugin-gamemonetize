@@ -10,19 +10,17 @@
 		// Bundles AdLad into a single file so that it can be published to package managers.
 		"bundle": "deno run --allow-read --allow-write --allow-env --allow-run scripts/bundle.js"
 	},
+	"nodeModulesDir": "auto",
 	"fmt": {
-		"files": {
-			"exclude": [
-				".denoTypes",
-				"dist"
-			]
-		},
-		"options": {
-			"indentWidth": 4,
-			"useTabs": true,
-			"lineWidth": 120,
-			"proseWrap": "preserve"
-		}
+		"exclude": [
+			".denoTypes",
+			"dist",
+			".github/workflows"
+		],
+		"indentWidth": 4,
+		"useTabs": true,
+		"lineWidth": 120,
+		"proseWrap": "preserve"
 	},
 	"lint": {
 		"files": {
