@@ -30,7 +30,7 @@
 			]
 		},
 		"rules": {
-			"exclude": ["require-await"]
+			"exclude": ["require-await", "no-import-prefix", "no-window"]
 		}
 	},
 	"importMap": "importmap.json"

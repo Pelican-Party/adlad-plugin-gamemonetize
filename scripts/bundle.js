@@ -39,9 +39,8 @@ await bundle.write({
 const tmpDir = await Deno.makeTempDir();
 
 Deno.chdir("..");
-const proc = Deno.run({
-	cmd: [
-		"deno",
+const command = new Deno.Command(Deno.execPath(), {
+	args: [
 		"run",
 		"--allow-env",
 		"--allow-read",
@@ -58,7 +57,7 @@ const proc = Deno.run({
 	stderr: "null",
 	stdout: "null",
 });
-await proc.status();
+await command.output();
 
 await Deno.copyFile(path.resolve(tmpDir, "src/mod.d.ts"), path.resolve("dist/adlad-plugin-gamemonetize.d.ts"));
 
