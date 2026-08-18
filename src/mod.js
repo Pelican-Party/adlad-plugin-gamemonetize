@@ -54,9 +54,8 @@ export function gameMonetizePlugin({
 				}, 10_000);
 			});
 
-			const scriptEl = document.createElement("script");
-			scriptEl.src = "https://api.gamemonetize.com/sdk.js";
-			document.head.appendChild(scriptEl);
+			await ctx.loadScriptTag("https://api.gamemonetize.com/sdk.js");
+
 			await Promise.race([initializePromise, timeoutPromise]);
 			clearTimeout(timeoutId);
 
